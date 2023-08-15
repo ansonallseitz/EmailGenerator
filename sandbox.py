@@ -1,29 +1,31 @@
-import tkinter as tk
+def WindowsContingencies():
+            selected_problem = ProblemDropdown.get()
+            Email_Text.delete('1.0', END)
+            first_name = NameEntry.get()
+            computer_name = ComputerEntry.get()
+            task_number = TaskNumberEntry.get()
 
-def print_selection():
-    selected = var.get()
-    if selected == 1:
-        print("It's Windows")
-    elif selected == 2:
-        print("It's MacOS")
+            if selected_problem=="Disk Encrypted":
+                email_template = f"Hi {first_name}\n\nI'm attempting to reach out because your Windows device named {computer_name} is showing as non-compliant in our database.\nThe issue is that the drive hasn't been encrypted. On Windows that service is called, \"BitLocker.\"\n\nIf you are able to set up BitLocker yourself, please let us know. You will need to have the computer connected to the ND network for 2 hours for it to show as compliant in our database.\n\nIf you need assistance you can call us here at the Help Desk at: 574-631-8111 please, or you can stop by in-person here on campus at 115 Debartolo Hall, our hours are:\nMonday - Thursday: 7:30 a.m. - 6:30 p.m.\nFriday: 7:30 a.m. - 5:00 p.m.\nSaturday: Closed\nSunday: 1:00 p.m. - 5:00 p.m.\n\nPlease refer to the TASK number below while contacting the Help Desk.\nIf neither of those work for you we can also send someone from Help Desk Dispatch to your office on-campus for in person assistance. Please let me know which option would work best for you through the link of the TASK below.\n\nTask Number = {task_number}"
+            elif selected_problem=="OS Firewall Enabled":
+                email_template = f"Hi {first_name}\n\nI'm attempting to reach out because your Windows device named {computer_name} is showing as non-compliant in our database.\nThe issue is that the firewall hasn't been enabled.\n\nIf you are able to set up the firewall yourself, please let us know.\nYou will need to have the computer connected to the ND network for 2 hours for it to show as compliant in our database.\n\nIf you need assistance you can call us here at the Help Desk at: 574-631-8111 please, or you can stop by in-person here on campus at 115 Debartolo Hall, our hours are:\n\nMonday - Thursday: 7:30 a.m. - 6:30 p.m.\n\nFriday: 7:30 a.m. - 5:00 p.m.\n\nSaturday: Closed\n\nSunday: 1:00 p.m. - 5:00 p.m.\n\nPlease refer to the TASK number below while contacting the Help Desk. If neither of those work for you we can also send someone from Help Desk Dispatch to your office on-campus for in person assistance.\n\nPlease let me know which option would work best for you through the link of the TASK below.\n\nTask Number = {task_number}"  
+            elif selected_problem =="OS Patched":
+                email_template = f"Hi {first_name}\n\nI'm attempting to reach out because your Windows device named {computer_name} is showing as non-compliant in our database.\nThe issue is that the operating system hasn't been updated.\n\nIf you are able to update the computer yourself, please let us know. You will need to have the computer connected to the ND network for 2 hours for it to show as compliant in our database.\n\nIf you need assistance you can call us here at the Help Desk at: 574-631-8111 please, or you can stop by in-person here on campus at 115 Debartolo Hall, our hours are:\n\nMonday - Thursday: 7:30 a.m. - 6:30 p.m.\n\nFriday: 7:30 a.m. - 5:00 p.m.\n\nSaturday: Closed\n\nSunday: 1:00 p.m. - 5:00 p.m.\n\nPlease refer to the TASK number below while contacting the Help Desk. If neither of those work for you we can also send someone from Help Desk Dispatch to your office on-campus for in person assistance. Please let me know which option would work best for you through the link of the TASK below.\n\nTask Number = {task_number}"
+            elif selected_problem=="OS Supported":
+                email_template = f"Hi {first_name}\n\nI'm attempting to reach out because your Windows device named {computer_name} is showing as non-compliant in our database.\nThe issue is that the operating system hasn't been updated.\n\nIf you are able to update the computer yourself, please let us know. You will need to have the computer connected to the ND network for 2 hours for it to show as compliant in our database.\n\nIf you need assistance you can call us here at the Help Desk at: 574-631-8111 please, or you can stop by in-person here on campus at 115 Debartolo Hall, our hours are:\n\nMonday - Thursday: 7:30 a.m. - 6:30 p.m.\n\nFriday: 7:30 a.m. - 5:00 p.m.\n\nSaturday: Closed\n\nSunday: 1:00 p.m. - 5:00 p.m.\n\nPlease refer to the TASK number below while contacting the Help Desk. If neither of those work for you we can also send someone from Help Desk Dispatch to your office on-campus for in person assistance. Please let me know which option would work best for you through the link of the TASK below.\n\nTask Number = {task_number}"
+            else: 
+                return
+            Email_Text.insert('1.0', email_template)
 
-# Create the main window
-root = tk.Tk()
-root.title("Operating System Selection")
 
-# Create a IntVar to store the selected radio button's value
-var = tk.IntVar()
-
-# Create the radio buttons
-windows_radio = tk.Radiobutton(root, text="Windows", variable=var, value=1)
-macos_radio = tk.Radiobutton(root, text="MacOS", variable=var, value=2)
-
-# Pack the radio buttons horizontally
-windows_radio.pack(side=tk.LEFT)
-macos_radio.pack(side=tk.LEFT)
-
-# Create a button to trigger the print function
-print_button = tk.Button(root, text="Print Selection", command=print_selection)
-print_button.pack()
-
-root.mainloop()
+            if selected_problem=="Disk Encrypted":
+                email_template = f"Hi {first_name}\n\nI'm attempting to reach out because your Mac OS device named {computer_name} is showing as non-compliant in our database.\nThe issue is that the drive hasn't been encrypted. On Mac that service is called, \"File Vault.\"\n\nIf you are able to set up File Vault yourself, please let us know. You will need to have the computer connected to the ND network for two hours for it to show as compliant in our database.\n\nIf you need assistance you can call us here at the Help Desk at: 574-631-8111 please, or you can stop by in-person here on campus at 115 Debartolo Hall, our hours are:\nMonday - Thursday: 7:30 a.m. - 6:30 p.m.\nFriday: 7:30 a.m. - 5:00 p.m.\nSaturday: Closed\nSunday: 1:00 p.m. - 5:00 p.m.\n\nPlease refer to the TASK number below while contacting the Help Desk. If neither of those work for you we can also send someone from Help Desk Dispatch to your office on-campus for in person assistance. Please let me know which option would work best for you through the link of the TASK below.\n\nTask Number = {task_number}"              
+            elif selected_problem=="OS Firewall Enabled":
+                email_template = f"Hi {first_name}\n\nI'm attempting to reach out because your Mac OS device named {computer_name} is showing as non-compliant in our database.\nThe issue is that the firewall hasn't been enabled.\n\nIf you are able to set up the firewall yourself, please let us know. You will need to have the computer connected to the ND network for it to show as compliant in our database.\n\nIf you need assistance you can call us here at the Help Desk at: 574-631-8111"
+            elif selected_problem=="OS Patched":
+                email_template = f"Hi {first_name}\n\nI'm attempting to reach out because your Mac OS device named {computer_name} is showing as non-compliant in our database.\nThe issue is that the drive hasn't been encrypted. On Mac that service is called, \"File Vault.\"\n\nIf you are able to set up File Vault yourself, please let us know. You will need to have the computer connected to the ND network for two hours for it to show as compliant in our database.\n\nIf you need assistance you can call us here at the Help Desk at: 574-631-8111 please, or you can stop by in-person here on campus at 115 Debartolo Hall, our hours are:\nMonday - Thursday: 7:30 a.m. - 6:30 p.m.\nFriday: 7:30 a.m. - 5:00 p.m.\nSaturday: Closed\nSunday: 1:00 p.m. - 5:00 p.m.\n\nPlease refer to the TASK number below while contacting the Help Desk. If neither of those work for you we can also send someone from Help Desk Dispatch to your office on-campus for in person assistance. Please let me know which option would work best for you through the link of the TASK below.\n\nTask Number = {task_number}"
+            elif selected_problem=="OS Supported":
+                email_template = f"Hi {first_name}\n\nI'm attempting to reach out because your Mac OS device named {computer_name} is showing as non-compliant in our database.\nThe issue is that the computer's operating system is showing as not supported. To be compliant with University IT policy, Mac computers have to run Ventura 13.0.\n\nIf the device is currently in use, can you update it and make sure that it's connected to the ND network for at least 2 hours?\n\nIf the device is several years old, it might not be able to receive the supported OS version. In that case, the device will need to be phased out. Please contact the help desk using the instructions below.\n\nIf you need assistance you can call us here at the Help Desk at: 574-631-8111 please, or you can stop by in-person here on campus at 115 Debartolo Hall, our hours are:\nMonday - Thursday: 7:30 a.m. - 6:30 p.m.\nFriday: 7:30 a.m. - 5:00 p.m.\nSaturday: Closed\nSunday: 1:00 p.m. - 5:00 p.m.\n\nPlease refer to the TASK number below while contacting the Help Desk. If neither of those work for you we can also send someone from Help Desk Dispatch to your office on-campus for in person assistance. Please let me know which option would work best for you through the link of the TASK below.\n\nTask Number = {task_number}"
+            else:
+                 return 
+            Email_Text.insert('1.0', email_template)
